@@ -42,3 +42,5 @@ multirun/
 # OS / editor
 .DS_Store
 *.swp
+
+all_files_and_contents.txt

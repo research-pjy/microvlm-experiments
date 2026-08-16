@@ -1,0 +1,4 @@
+# The 5-image tests/fixtures/ fixture, as a first-class `data` group entry.
+# Select with `data=fixture`. No root_path/split needed — path is fixed via
+# microvlm.utils.paths.fixture_dir(). Pairs naturally with training=local_smoke.
+name: fixture

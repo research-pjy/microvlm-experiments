@@ -6,7 +6,7 @@ import logging
 
 from omegaconf import DictConfig
 
-from microvlm.experiments._support import fixture_caption_dataset, require_fixture
+from microvlm.experiments._support import dataset_for_cfg
 from microvlm.models.config import NanoVLMConfig, count_parameters
 from microvlm.models.nanovlm import build_nanovlm
 from microvlm.training.checkpoint import save_checkpoint
@@ -19,20 +19,25 @@ from microvlm.utils.seeding import seed_everything
 
 
 def run(cfg: DictConfig) -> None:
-    """Train on fixture captions (iteration 0 local path)."""
+    """Train on whichever ``data`` group Hydra composed.
+
+    ``data=fixture`` keeps the old iteration-0 behavior. ``data=coco``
+    trains on raw human captions over real COCO. ``data=shortdesc`` /
+    ``data=longdesc`` / ``data=controlled_length`` train on teacher-
+    generated text (run ``microvlm-generate`` for that data group first).
+    """
 
     require_microvlm_env()
     configure_logging()
     seed_everything(int(cfg.get("seed", 42)))
-    fixtures = require_fixture()
-    dataset = fixture_caption_dataset(
-        fixtures,
-        vocab_size=int(cfg.model.vocab_size),
-        image_size=int(cfg.model.image_size),
-        max_seq_len=min(64, int(cfg.model.max_seq_len)),
-    )
+    dataset = dataset_for_cfg(cfg)
     model = build_nanovlm(NanoVLMConfig.from_hydra(cfg))
-    logging.getLogger(__name__).info("params=%s", count_parameters(model))
+    logging.getLogger(__name__).info(
+        "data=%s n_samples=%s params=%s",
+        cfg.data.name,
+        len(dataset),  # type: ignore[arg-type]
+        count_parameters(model),
+    )
     result = train_model(model, dataset, cfg)
     ckpt = project_root() / str(cfg.training.checkpoint_dir) / "last.pt"
     save_checkpoint(ckpt, model, extra={"losses": result.losses})

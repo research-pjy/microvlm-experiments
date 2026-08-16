@@ -2,3 +2,10 @@ name: shortdesc
 prompt_id: shortdesc
 source: coco
 output_jsonl: data/processed/shortdesc.jsonl
+
+# Same fields as coco.yaml. Hydra only composes one `data` entry at a time,
+# so shortdesc/longdesc/controlled_length each carry their own copy rather
+# than inheriting coco.yaml's — this way `data.root_path=... data.split=...`
+# works as an override no matter which of the four is active.
+root_path: null
+split: val2017
