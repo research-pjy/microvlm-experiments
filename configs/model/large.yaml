@@ -1,0 +1,15 @@
+# NanoVLM-large (Table 1).
+name: large
+n_blks: 5
+n_layer: 10
+n_head: 16
+head_size: 12
+n_embd: 192
+img_embd_dim: 512
+dropout: 0.1
+image_size: 224
+patch_size: 16
+learning_rate: 1.0e-3
+vocab_size: 8192
+max_seq_len: 256
+approx_total_params: 25_000_000

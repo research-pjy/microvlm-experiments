@@ -1,0 +1,4 @@
+# @package encoder
+# Encoder group file path: configs/model/encoder/ (Hydra group model/encoder).
+name: arch_a_patch_then_conv
+arch: arch_a

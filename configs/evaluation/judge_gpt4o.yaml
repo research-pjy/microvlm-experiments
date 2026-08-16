@@ -1,0 +1,6 @@
+# @package evaluation.judge
+name: judge_gpt4o
+backend: gpt4o
+model: gpt-4o
+temperature: 0.0
+api_key_env: OPENAI_API_KEY

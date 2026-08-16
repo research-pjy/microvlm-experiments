@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Env / secrets
+.env
+.venv/
+venv/
+
+# Data and run artifacts (keep directory placeholders via .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/external/*
+!data/external/.gitkeep
+outputs/checkpoints/*
+!outputs/checkpoints/.gitkeep
+outputs/logs/*
+!outputs/logs/.gitkeep
+outputs/results/*
+!outputs/results/.gitkeep
+
+# Fixture images/captions are populated externally; do not commit bulk binary data
+
+# Hydra
+multirun/
+
+# OS / editor
+.DS_Store
+*.swp

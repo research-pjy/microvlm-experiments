@@ -1,0 +1,12 @@
+# Documentation/reproducibility only. Do NOT create a new conda env from this file
+# for day-to-day work. Activate the existing `microvlm` environment, then run
+# `make setup` (which executes `pip install -e ".[dev]"`).
+name: microvlm
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - -e ".[dev]"

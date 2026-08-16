@@ -1,0 +1,16 @@
+# NanoVLM-mini (Table 1).
+name: mini
+n_blks: 1
+n_layer: 4
+n_head: 8
+head_size: 12
+n_embd: 96
+img_embd_dim: 400
+dropout: 0.1
+image_size: 224
+patch_size: 16
+learning_rate: 1.0e-3
+vocab_size: 8192
+max_seq_len: 256
+# Approximate Table 1 total; computed at runtime, not enforced.
+approx_total_params: 5_000_000

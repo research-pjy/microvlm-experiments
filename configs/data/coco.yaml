@@ -1,0 +1,5 @@
+# COCO Captions root. Unset locally (fixture-only). Set on the DGX to the
+# machine-local COCO directory. This project never bundles COCO.
+name: coco
+root_path: null
+split: val2017

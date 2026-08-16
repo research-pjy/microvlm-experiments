@@ -1,0 +1,4 @@
+name: shortdesc
+prompt_id: shortdesc
+source: coco
+output_jsonl: data/processed/shortdesc.jsonl

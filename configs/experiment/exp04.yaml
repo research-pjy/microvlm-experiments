@@ -1,0 +1,13 @@
+# @package _global_
+# Experiment 04 — language complexity scaling.
+defaults:
+  - /model: mini
+  - /model/encoder: arch_a_patch_then_conv
+  - /data: controlled_length
+  - /teacher: local_ollama
+  - /training: local_smoke
+  - /evaluation: metrics
+  - _self_
+
+experiment_id: exp04
+lengths: [20, 40, 60, 80, 100]

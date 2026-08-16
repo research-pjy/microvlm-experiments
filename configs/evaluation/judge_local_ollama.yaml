@@ -1,0 +1,7 @@
+# @package evaluation.judge
+name: judge_local_ollama
+backend: local_ollama
+host: http://localhost:11434
+model: llama3.2:3b
+temperature: 0.0
+timeout_s: 120

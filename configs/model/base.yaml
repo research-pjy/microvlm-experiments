@@ -1,0 +1,15 @@
+# NanoVLM-base (Table 1).
+name: base
+n_blks: 3
+n_layer: 8
+n_head: 8
+head_size: 16
+n_embd: 128
+img_embd_dim: 512
+dropout: 0.1
+image_size: 224
+patch_size: 16
+learning_rate: 1.0e-3
+vocab_size: 8192
+max_seq_len: 256
+approx_total_params: 16_000_000

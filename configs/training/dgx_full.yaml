@@ -1,0 +1,8 @@
+device: cuda
+max_samples: null
+batch_size: 32
+num_workers: 4
+epochs: 10
+learning_rate: 1.0e-3
+log_every: 50
+checkpoint_dir: outputs/checkpoints

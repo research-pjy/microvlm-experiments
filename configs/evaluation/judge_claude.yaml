@@ -1,0 +1,6 @@
+# @package evaluation.judge
+name: judge_claude
+backend: claude
+model: claude-sonnet-4-20250514
+temperature: 0.0
+api_key_env: ANTHROPIC_API_KEY

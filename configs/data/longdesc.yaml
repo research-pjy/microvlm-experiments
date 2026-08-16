@@ -1,0 +1,4 @@
+name: longdesc
+prompt_id: longdesc
+source: coco
+output_jsonl: data/processed/longdesc.jsonl
