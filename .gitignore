@@ -44,3 +44,5 @@ multirun/
 *.swp
 
 all_files_and_contents.txt
+
+.vscode/
